@@ -1,17 +1,14 @@
-import org.example.Game
+import org.example.CellStatus
 import org.example.Grid
-import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import java.awt.GridLayout
 
 class GameTest{
 
     @Test
-    fun initializeGrid() {
+    fun initializeGridWithDeadCell() {
         val grid = Grid(1, 1)
-        val game = Game(grid)
-        assertEquals(1, game.grid.width)
-        assertEquals(1, game.grid.height)
+        assertEquals(CellStatus.DEAD, grid.getCellStatus(0, 0))
     }
 }
 
